@@ -1,5 +1,5 @@
 {
-  "name": "jeupingpongexpressjs",
+  "name": "pingpong4players",
   "version": "1.0.0",
   "description": "Ping pong game online  with 4 players multiplayer",
   "main": "server.js",
