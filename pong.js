@@ -1,5 +1,5 @@
 // Connection au server
-var socket=io.connect('https://pingpong4players.herokuapp.com/:1337');
+var socket=io.connect('https://pingpong4players.herokuapp.com');
 
 let players_serveur=[]
 let players=[]
