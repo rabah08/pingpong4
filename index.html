@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu Ping Pong</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background-color: dimgray;
+        }
+        #pong{
+            border: 2px solid #FFF;
+            position: absolute;
+            margin :auto;
+            padding: 0;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="pong" width="800" height="400"></canvas>
+   
+    <div id="login" >
+        <form method="post" id="loginform" name="f">
+            
+          
+           <div class="row mx-auto m-5 p-5 ">
+                <div class="col-md-8 ">
+                    <input  type="text" name="nom" id="nom" placeholder="votre nom..">
+                </div>
+                <div class="col-md-4 ">
+                    <input  type="button" onclick="validateForm()"  value="Entrer" id="btn"> 
+                </div>
+            </div>
+            <div id="players">
+                <h4 id="players_list"></h4>
+
+             </div>
+   
+
+        </form>
+        </div> 
+   
+
+   
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+  
+   <script type="text/javascript" src="http://localhost:1337/socket.io/socket.io.js"></script> 
+   <script type="text/javascript" src="pong.js"></script>
+   <script type="text/javascript" src="js/client.js"></script>
+ 
+   
+</body>
+</html>
