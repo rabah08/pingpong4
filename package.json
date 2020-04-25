@@ -2,7 +2,7 @@
   "name": "jeupingpongexpressjs",
   "version": "1.0.0",
   "description": "Ping pong game online  with 4 players multiplayer",
-  "main": "pong.js",
+  "main": "index.html",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
