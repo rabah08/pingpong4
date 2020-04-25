@@ -1,3 +1,4 @@
+var PORT=process.env.PORT || 1337
 var http=require('http')
 
 
@@ -6,7 +7,7 @@ httpServer=http.createServer(function(req,res){
     console.log('un utilisateur a afficher une page')
 })
 
-httpServer.listen('1337')
+httpServer.listen(PORT)
 
 // game state (players list)
 const players = [];
