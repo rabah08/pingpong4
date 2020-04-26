@@ -388,7 +388,7 @@ function update(){
         }
          })   
 
-        for (let i = 0; i <= players.length; i++) {
+        for (let i = 0; i < players.length; i++) {
                 if(players[i].id==player_recu.id){
                     players[i].score=player_recu.score;
                 }
@@ -401,7 +401,7 @@ function update(){
     drawArc(maball.x, maball.y, maball.radius, maball.color);
     drawRect(player_recu.x, player_recu.y, player_recu.width, player_recu.height, player_recu.color);
     
-    for(var i=0;i<=players.length;i++){
+    for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
         drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
         //drawArc(ball.x, ball.y, ball.radius, ball.color); 
@@ -452,8 +452,11 @@ function render(){
      
 }
 function game(){
-    update();
-    render();
+    if(players[1].id != ''){
+            update();
+            render();
+    }
+   
 }
 // number of frames per second
 let framePerSecond = 50;
