@@ -51,7 +51,10 @@ socket.on('connect', function() {
                     for (let j = 0; j < players.length; j++ ){
                         if(players[j].id==player){
                                 players[j].id='';
-                        }
+                                players[players.lenght-1-j]=players[j]
+                               
+                        } 
+                        players[j].score=0;
                     }     
                     i--;                  
                     alert('le joueur '+player+' a quitter !')
@@ -458,11 +461,11 @@ function render(){
      
 }
 function game(){
-    if(players[1].id != ''){
+    if(players[1].id != '' || players[0].id!=''){
+        
             update();
             render();
-    }
-   
+    
 }
 // number of frames per second
 let framePerSecond = 50;
