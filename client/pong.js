@@ -366,7 +366,14 @@ function update(){
          if (/*players[i].id==player.id &&*/ player.id != MonNom) {
             // players[i]=player;
              player_recu =player;
-         } 
+              }
+             for (let i = 0; i <= players.length; i++) {
+                 if(players[i].id==player.id){
+                     players[i].score=player.score;
+                 }
+                 
+             }
+         
          
        /*   drawArc(ball.x, ball.y, ball.radius, ball.color);
          if(player[1].id!=''){
