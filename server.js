@@ -1,11 +1,12 @@
 var PORT=process.env.PORT || 1337
 var http=require('http')
 const fs=require('fs')
-
+var canvas = document.getElementById('canvas');
+var dataURL = canvas.toDataURL();
 httpServer=http.createServer(function(req,res){
     console.log('un utilisateur a afficher une page')
-        res.writeHead(200,{'Content-Type':'utf-8'})
-        fs.readFile('index.html',function(error,data){
+        res.writeHead(200,{'Content-Type':'image/png'})
+        fs.readFile(dataURL,function(error,data){
             if(error){
                 res.writeHead(404)
                 res.write('error : file not found!')
