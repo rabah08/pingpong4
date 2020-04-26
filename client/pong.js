@@ -377,19 +377,22 @@ function update(){
          
      //  drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
      
-      socket.on('ball-remote',function (ball_recu) {
+ 
+    });
+    
+     socket.on('ball-remote',function (ball_recu) {
         if (player.id != MonNom) {
             maball=ball_recu;
         }
-         })
-    });
-    
+         })    
+
     drawArc(maball.x, maball.y, maball.radius, maball.color);
     drawRect(player_recu.x, player_recu.y, player_recu.width, player_recu.height, player_recu.color);
     
     for(var i=0;i<=players.length;i++){
         if(players[i].id==MonNom){
         drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
+        drawArc(ball.x, ball.y, ball.radius, ball.color); 
         }
     }
     
