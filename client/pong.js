@@ -366,11 +366,7 @@ function update(){
          if (/*players[i].id==player.id &&*/ player.id != MonNom) {
             // players[i]=player;
              player_recu =player;
-              }
-             for (let i = 0; i <= players.length; i++) {
-                 if(players[i].id==player.id){
-                     players[i].score=player.score;
-                 }
+             
                  
              }
          
@@ -403,8 +399,14 @@ function update(){
         //drawArc(ball.x, ball.y, ball.radius, ball.color); 
         }
     }
+    for (let i = 0; i <= players.length; i++) {
+            if(players[i].id==player.id){
+                players[i].score=player.score;
+            }
     
-     
+    }
+    
+  
  }
 
 // render function, the function that does al the drawing
