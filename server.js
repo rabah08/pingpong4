@@ -1,23 +1,28 @@
 var PORT=process.env.PORT || 1337
+var express=require('express')
+var app= express();
 var http=require('http')
-const fs=require('fs')
-var canvas = document.getElementById('canvas');
-var dataURL = canvas.toDataURL();
-httpServer=http.createServer(function(req,res){
+
+var server=http.Server(app)
+/* httpServer=http.createServer(function(req,res){
     console.log('un utilisateur a afficher une page')
-        res.writeHead(200,{'Content-Type':'image/png'})
-        fs.readFile(dataURL,function(error,data){
+         res.writeHead(200,{'Content-Type':'text/html'})
+        fs.readFile('index.html',function(error,data){
             if(error){
                 res.writeHead(404)
                 res.write('error : file not found!')
             }else{
                         res.write(data)
                  }
-                 res.end()
+                 res.end() 
         })
-})
+}) */
+app.use(express.static('client'))
 
-httpServer.listen(PORT)
+server.listen(PORT, function(){
+    console.log(' game server running')
+})
+//httpServer.listen(PORT)
 
 // game state (players list)
 const players = [];
@@ -28,7 +33,7 @@ canvsheight=400;
 canvswidth=800;
 var x=[0,canvswidth-10];
 var cmpt=0;
-var io= require('socket.io').listen(httpServer)
+var io= require('socket.io')(server)
 io.sockets.on('connection',function(socket){
    
     console.log('Connected sockets connected id :'+socket.id);
