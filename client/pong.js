@@ -358,7 +358,7 @@ function update(){
   } */
 
   var player_recu;
-
+  var maball;
   function drawPlayers() {
     //bloc ajouté par med
     socket.on('move-remote', function(player) {
@@ -379,7 +379,7 @@ function update(){
      
  
     });
-    
+
      socket.on('ball-remote',function (ball_recu) {
         if (player.id != MonNom) {
             maball=ball_recu;
@@ -398,7 +398,7 @@ function update(){
     
      
  }
-var maball;
+
 // render function, the function that does al the drawing
 function render(){
     
