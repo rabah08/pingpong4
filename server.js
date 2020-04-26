@@ -4,7 +4,7 @@ const fs=require('fs')
 
 httpServer=http.createServer(function(req,res){
     console.log('un utilisateur a afficher une page')
-        //res.writeHead(200,{'Content-Type':'text/html'})
+        res.writeHead(200,{'Content-Type':'image/jpeg'})
         fs.readFile('index.html',function(error,data){
             if(error){
                 res.writeHead(404)
