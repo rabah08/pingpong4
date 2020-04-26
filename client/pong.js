@@ -461,7 +461,7 @@ function render(){
      
 }
 function game(){
-    if(players[1].id != '' || players[0].id != ''){
+    if(players[1].id != '' && players[0].id != ''){
         
             update();
             render();
