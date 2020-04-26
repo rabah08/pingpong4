@@ -43,7 +43,7 @@ io.sockets.on('connection',function(socket){
         };
         idies.push(socket.id)
         cmpt+=1; */
-         var me;
+         var me=false;
         socket.on('login',function(user){
             me=user;
             cmpt++;
@@ -70,9 +70,12 @@ io.sockets.on('connection',function(socket){
         
   
     socket.on('disconnect',function(data){
-       
+       if(!me){
+           return false;
+       }
         console.log('Disconnect: sockets disconnected')
-        delete players[socket.id];
+        delete players[me];
+        io.sockets.emit('discuser',me);
     })
 })
 

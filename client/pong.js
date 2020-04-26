@@ -33,7 +33,7 @@ socket.on('connect', function() {
     document.getElementById("login").style.visibility="hidden";
   })
 
-        socket.on('newplayer',function(player){
+     socket.on('newplayer',function(player){
            /* à revenir si ca marche pas  players_serveur.push(id)
             console.log('new player from server: '+id[0]+' players 2: '+id[1])
           
@@ -46,10 +46,16 @@ socket.on('connect', function() {
                 i++;
           console.log('first id: '+players[0].id+'second id'+players[1].id+' ')
         })
-/* socket.on('get new player',function(socketid_newplayer){
-players[i].id=socketid_newplayer;
-i++;
-}) */
+
+            socket.on('discuser',function(player){
+                    for (let j = 0; j < players.length; j++ ){
+                        if(players[j].id==player){
+                                players[j].id='';
+                        }
+                    }     
+                    i--;                  
+                    alert('le joueur '+player+' a quitter !')
+            })
 
 
 
