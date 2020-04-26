@@ -382,7 +382,7 @@ function update(){
             maball=ball_recu;
         }
          })   
-         
+
     });
 
       
@@ -393,7 +393,7 @@ function update(){
     for(var i=0;i<=players.length;i++){
         if(players[i].id==MonNom){
         drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
-        drawArc(ball.x, ball.y, ball.radius, ball.color); 
+        //drawArc(ball.x, ball.y, ball.radius, ball.color); 
         }
     }
     
