@@ -39,8 +39,8 @@ socket.on('connect', function() {
           
                 players[i].id=id;
                 i++; */
-                //alert('le player récuperer de server est: '+player)
-                document.getElementById("players_list").innerHTML+=' '+player+'   ';
+                alert('Nouveau player : '+player)
+                //document.getElementById("players_list").innerHTML+=' '+player+'   ';
                 players[i].id=player;
                 //alert(' player de id: '+players[i].id)
                 i++;
@@ -157,7 +157,7 @@ function getMousePos(evt){
     let rect = canvas.getBoundingClientRect();
     
     //user.y = evt.clientY - rect.top - user.height/2;
-    for(var i=0;i<=players.length;i++){
+    for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
             players[i].y = evt.clientY - rect.top - players[i].height/2;
             socket.emit('move',players[i])
