@@ -390,7 +390,7 @@ function update(){
 
         for (let i = 0; i <= players.length; i++) {
                 if(players[i].id==player.id){
-                    players[i].score=player.score;
+                    players[i].score=player_recu.score;
                 }
         
         }
