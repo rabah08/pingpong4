@@ -51,13 +51,14 @@ socket.on('connect', function() {
                     for (let j = 0; j < players.length; j++ ){
                         if(players[j].id==player){
                                 players[j].id='';
-                                players[players.lenght-1-j]=players[j]
+                                //players[players.lenght-1-j]=players[j]
                                
                         } 
                         players[j].score=0;
                     }     
                     i--;                  
                     alert('le joueur '+player+' a quitter !')
+                    window.close()
             })
 
 
