@@ -461,11 +461,12 @@ function render(){
      
 }
 function game(){
+
     if(players[1].id != '' && players[0].id != ''){
         
             update();
             render();
-    
+        }
 }
 // number of frames per second
 let framePerSecond = 50;
