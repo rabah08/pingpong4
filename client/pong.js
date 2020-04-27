@@ -324,7 +324,7 @@ function update(){
         resetBall();
     }else if( ball.x + ball.radius > canvas.width){
         players[0].score++;
-        player[3].score++;
+        players[3].score++;
         //userScore.play();
         resetBall();
     }
