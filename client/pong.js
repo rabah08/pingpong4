@@ -190,8 +190,7 @@ function getMousePos(evt){
     for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
             players[i].y = evt.clientY - rect.top - players[i].height/2;
-            getPosPlayer=players[i]
-            //socket.emit('move',players[i])
+            socket.emit('move',players[i])
             console.log(sessionID+'id1:'+players[0].id+'id 2: '+players[1].id)
             console.log('MonNom dans getMousePos: '+MonNom)
             
@@ -208,7 +207,7 @@ function getMousePos(evt){
 function movePlayer(){
 
     canvas.addEventListener("mousemove", getMousePos);
-    socket.emit('move',getPosPlayer)
+   
     if(players[1].id!=MonNom){
         
         socket.emit('ball',ball)
@@ -401,7 +400,11 @@ function update(){
                  
              }
 
-         
+           socket.on('ball-remote',function (ball_recu) {
+        if (player.id != MonNom) {
+            maball=ball_recu;
+        }
+         })   
          
          
        /*   drawArc(ball.x, ball.y, ball.radius, ball.color);
@@ -416,11 +419,7 @@ function update(){
  
     });
 
-      socket.on('ball-remote',function (ball_recu) {
-        if (player.id != MonNom) {
-            maball=ball_recu;
-        }
-         })   
+    
 
         for (let i = 0; i < players.length; i++) {
                 if(players[i].id==player_recu.id){
