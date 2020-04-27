@@ -58,7 +58,10 @@ io.sockets.on('connection',function(socket){
          console.log('server : id numero: '+ k+' valeur: '+players[k]);
                 }
         
-      socket.on('move',function(player) {
+            var loop=setInterval(Envoyer,1000/50)
+
+        function Envoyer(){
+            socket.on('move',function(player) {
        
         io.volatile.emit('move-remote',player)
        
@@ -67,6 +70,8 @@ io.sockets.on('connection',function(socket){
                 io.volatile.emit('ball-remote',ball)
         })   
         
+        }
+      
         
   
     socket.on('disconnect',function(data){
