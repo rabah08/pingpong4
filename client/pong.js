@@ -145,6 +145,26 @@ players[0] = {
     color : "#fff"
   };
 
+  players[2] = {
+    id:'',
+    x : (canvas.width/4)-10, // left side of canvas
+    y : (canvas.height - 100)/2, // -100 the height of paddle
+    width : 10,
+    height : 100,
+    score : 0,
+    color : "#fff"
+  };
+
+  players[3] = {
+    id:'',
+    x : (canvas.width*3/4)-10, // right side of canvas
+    y : (canvas.height - 100)/2, // -100 the height of paddle
+    width : 10,
+    height : 100,
+    score : 0,
+    color : "#fff"
+  };
+
 // draw a rectangle, will be used to draw paddles
 function drawRect(x, y, w, h, color){
     ctx.fillStyle = color;
@@ -463,7 +483,7 @@ function render(){
 }
 function game(){
 
-    if(players[1].id != '' && players[0].id != ''){
+    if(players[1].id != '' && players[0].id != '' && players[2].id != '' && players[3].id != ''){
         
             update();
             render();
