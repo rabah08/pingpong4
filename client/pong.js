@@ -397,6 +397,10 @@ function update(){
  var meAsPlayer;
   var player_recu;
   var maball;
+  var player0_recu;
+  var player1_recu;
+  var player2_recu;
+  var player3_recu;
   function drawPlayers() {
     //bloc ajouté par med
     socket.on('move-remote', function(player) {
@@ -404,9 +408,20 @@ function update(){
          if (/*players[i].id==player.id &&*/ player.id != MonNom) {
             // players[i]=player;
              player_recu =player;
-             
-                 
+
              }
+             if (player.id==players[0].id) {
+                 player0_recu=player
+             }
+             if (player.id==players[1].id) {
+                player1_recu=player
+            }
+            if (player.id==players[2].id) {
+                player2_recu=player
+            }
+            if (player.id==players[3].id) {
+                player3_recu=player
+            }
 
          
          
@@ -437,9 +452,10 @@ function update(){
       
 
     drawArc(maball.x, maball.y, maball.radius, maball.color);
-    drawRect(player_recu.x, player_recu.y, player_recu.width, player_recu.height, player_recu.color);
-    drawRect(players[0].x, players[0].y, players[0].width, players[0].height, players[0].color)
-    drawRect(players[1].x, players[1].y, players[1].width, players[1].height, players[1].color)
+    //drawRect(player_recu.x, player_recu.y, player_recu.width, player_recu.height, player_recu.color);
+    drawRect(player0_recu.x, player0_recu.y, player_recu0.width,player0_recu.height, player0_recu.color)
+    drawRect(player2_recu.x, player2_recu.y, player2_recu.width, player2_recu.height, player2_recu.color)
+    drawRect(player3_recu.x, player3_recu.y, player3_recu.width, player3_recu.height, player3_recu.color)
     
     for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
@@ -449,7 +465,7 @@ function update(){
         }
     }
     
-    drawRect(meAsPlayer.x, meAsPlayer.y, meAsPlayer.width,meAsPlayer.height, meAsPlayer.color);
+    //drawRect(meAsPlayer.x, meAsPlayer.y, meAsPlayer.width,meAsPlayer.height, meAsPlayer.color);
   
  }
 
