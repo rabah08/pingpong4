@@ -60,11 +60,11 @@ io.sockets.on('connection',function(socket){
         
       socket.on('move',function(player) {
        
-        io.volatile.emit('move-remote',player)
+        io.broadcast.emit('move-remote',player)
        
     })
         socket.on('ball',function(ball) {
-                io.volatile.emit('ball-remote',ball)
+                io.broadcast.emit('ball-remote',ball)
         })   
         
         
