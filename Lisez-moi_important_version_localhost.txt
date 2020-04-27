@@ -1,0 +1,44 @@
+
+***********************************************
+Jeu ping pong 4 players
+
+***********************************************
+			/////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////////////////////////////////////Version Localhost////////////////////////////////////////////
+			/////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+  pour démarrer le jeu sur le terminal de Visual Studio Code
+
+	1)tapez commande : node server.js 
+	
+	2)Acceder au jeu ici sur le navigateur : http://localhost:1337/
+
+	Fin
+
+//////////////////////////////////////////////////////Version Heroku//////////////////////////////////////////////
+Pour démarrer le jeu dans localhost de wampserver ou xamp:
+
+	déplacez le projet dans pingpong4players dans le dossier 'www' si vous utilisez wampserver
+	sinon si vous utilisez xamp déplaçez le projet dans 'htdocs'
+
+1- modifiez dans le fichier pong.js remplaçez dans la ligne 2 :
+	ça 'https://pingpong4players.herokuapp.com' par 'adresse local de votre machine' par exemple 'http://localhost/pingpong4players'
+
+2- modifier dans le fichier index.html et remplacez dans la ligne 52 :
+	ça 'https://pingpong4players.herokuapp.com/socket.io/socket.io.js'
+	par cela 'http://localhost/pingpong4players/socket.io/socket.io.js'
+
+3- vous devez avoir git sinon si vous avez Visual studio code dans le terminal ou bien sur git:
+	
+	pour démarrer le serveur , tapez la commande:
+
+	node server.js
+
+4- le programme démarre dans localhost/pingpong4players:1337 
+le port c'est 1337
+
+5- il faut 4 joueurs, chacun tape son nom et clique sur entrer
+
+6-une fois les 4 joueurs s'authentifient le jeu commence faut juste bougez les souris pour afficher les raquettes
+
+7-une fois un joueur quitte le jeu , le jeu s'arretes et vous devez tous les 4 joueurs démarrer la fenetre de nouveau
