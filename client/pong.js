@@ -459,13 +459,13 @@ function update(){
     drawRect(player3_recu.x, player3_recu.y, player3_recu.width, player3_recu.height, player3_recu.color)
     
     
-    for(var i=0;i<players.length;i++){
+ /*    for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
             meAsPlayer=players[i];
             //drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
         //drawArc(ball.x, ball.y, ball.radius, ball.color); 
         }
-    }
+    } */
     
     //drawRect(meAsPlayer.x, meAsPlayer.y, meAsPlayer.width,meAsPlayer.height, meAsPlayer.color);
   
