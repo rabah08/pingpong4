@@ -454,8 +454,10 @@ function update(){
     drawArc(maball.x, maball.y, maball.radius, maball.color);
     //drawRect(player_recu.x, player_recu.y, player_recu.width, player_recu.height, player_recu.color);
     drawRect(player0_recu.x, player0_recu.y, player0_recu.width,player0_recu.height, player0_recu.color)
+    drawRect(player1_recu.x, player1_recu.y, player1_recu.width, player1_recu.height, player1_recu.color)
     drawRect(player2_recu.x, player2_recu.y, player2_recu.width, player2_recu.height, player2_recu.color)
     drawRect(player3_recu.x, player3_recu.y, player3_recu.width, player3_recu.height, player3_recu.color)
+    
     
     for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
