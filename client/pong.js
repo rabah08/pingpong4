@@ -347,7 +347,7 @@ function update(){
      player_group[1] = (ball.x + ball.radius < canvas.width/2) ? players[2] : players[3];
     // if the ball hits a paddle
     for (let i = 0; i < player_group.length; i++) {
-            if(collision(ball,player)){
+            if(collision(ball,player_group[i])){
             // play sound
             //hit.play();
             // we check where the ball hits the paddle
