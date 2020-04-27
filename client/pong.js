@@ -207,8 +207,8 @@ function getMousePos(evt){
 function movePlayer(){
 
     canvas.addEventListener("mousemove", getMousePos);
-   
-    if(players[3].id!=MonNom){
+  
+    if(players[3].id==MonNom){
         
         socket.emit('ball',ball)
         
