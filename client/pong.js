@@ -208,7 +208,7 @@ function movePlayer(){
 
     canvas.addEventListener("mousemove", getMousePos);
    
-    if(players[1].id!=MonNom){
+    if(players[3].id!=MonNom){
         
         socket.emit('ball',ball)
         
@@ -387,6 +387,7 @@ function update(){
       
   } */
 
+ 
   var player_recu;
   var maball;
   function drawPlayers() {
@@ -400,11 +401,7 @@ function update(){
                  
              }
 
-           socket.on('ball-remote',function (ball_recu) {
-        if (player.id != MonNom) {
-            maball=ball_recu;
-        }
-         })   
+         
          
          
        /*   drawArc(ball.x, ball.y, ball.radius, ball.color);
@@ -416,10 +413,11 @@ function update(){
          
      //  drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
      
- 
-    });
-
-    
+ socket.on('ball-remote',function (ball_recu) {
+        if (player.id != MonNom) {
+            maball=ball_recu;
+        }
+         })   
 
         for (let i = 0; i < players.length; i++) {
                 if(players[i].id==player_recu.id){
@@ -427,6 +425,9 @@ function update(){
                 }
         
         }
+    });
+
+      
 
     drawArc(maball.x, maball.y, maball.radius, maball.color);
     drawRect(player_recu.x, player_recu.y, player_recu.width, player_recu.height, player_recu.color);
@@ -441,6 +442,7 @@ function update(){
     
   
  }
+
 
 // render function, the function that does al the drawing
 function render(){
