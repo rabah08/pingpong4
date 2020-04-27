@@ -1,7 +1,7 @@
 // Connection au server
 var socket=io.connect('https://pingpong4players.herokuapp.com');
 
-let players_serveur=[]
+
 let players=[]
 let sessionID;
 let i=0
@@ -319,10 +319,12 @@ function update(){
     // change the score of players, if the ball goes to the left "ball.x<0" computer win, else if "ball.x > canvas.width" the user win
     if( ball.x - ball.radius < 0 ){
         players[1].score++;
+        players[2].score++;
         //comScore.play();
         resetBall();
     }else if( ball.x + ball.radius > canvas.width){
         players[0].score++;
+        player[3].score++;
         //userScore.play();
         resetBall();
     }
@@ -392,7 +394,7 @@ function update(){
       
   } */
 
- 
+ var meAsPlayer;
   var player_recu;
   var maball;
   function drawPlayers() {
@@ -439,12 +441,13 @@ function update(){
     
     for(var i=0;i<players.length;i++){
         if(players[i].id==MonNom){
-        drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
+            meAsPlayer=players[i];
+            //drawRect(players[i].x, players[i].y, players[i].width, players[i].height, players[i].color);
         //drawArc(ball.x, ball.y, ball.radius, ball.color); 
         }
     }
     
-    
+    drawRect(meAsPlayer.x, meAsPlayer.y, meAsPlayer.width,meAsPlayer.height, meAsPlayer.color);
   
  }
 
