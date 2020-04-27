@@ -147,7 +147,7 @@ players[0] = {
 
   players[2] = {
     id:'',
-    x : (canvas.width/4)-10, // left side of canvas
+    x : (canvas.width/4), // left side of canvas
     y : (canvas.height - 100)/2, // -100 the height of paddle
     width : 10,
     height : 100,
